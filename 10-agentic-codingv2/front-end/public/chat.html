@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Agentic RAG</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">🤖</span>
+                <span class="brand-name">Agentic RAG</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/chat" class="nav-link active">Chat</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Chat Container -->
+    <main class="chat-page">
+        <div class="container">
+            <div class="chat-container">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <h1>AI Assistant</h1>
+                    <p>Ask me anything - I can search the web, Wikipedia, ArXiv, and more!</p>
+                    <button class="btn btn-small btn-secondary" id="clear-chat">Clear History</button>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chat-messages">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">👋</div>
+                        <h2>Welcome to Agentic RAG!</h2>
+                        <p>I'm your AI assistant. I can help you find information using various sources:</p>
+                        <ul>
+                            <li>🔍 Google Search for real-time information</li>
+                            <li>📚 Wikipedia for general knowledge</li>
+                            <li>🎓 ArXiv for academic papers</li>
+                            <li>📖 LangSmith documentation</li>
+                        </ul>
+                        <p>Just type your question below and I'll do my best to help!</p>
+                    </div>
+                </div>
+
+                <!-- Scroll to Bottom Button -->
+                <button class="scroll-down-btn" id="scroll-down" aria-label="Scroll to bottom">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <form id="chat-form" class="chat-form">
+                        <textarea 
+                            id="chat-input" 
+                            class="chat-input" 
+                            placeholder="Type your question here..." 
+                            rows="1"
+                            required
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary btn-send" id="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                            <span class="send-text">Send</span>
+                        </button>
+                    </form>
+                    <div class="input-hint">
+                        Press Enter to send, Shift+Enter for new line
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-minimal">
+        <div class="container">
+            <p>&copy; 2025 Agentic RAG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>

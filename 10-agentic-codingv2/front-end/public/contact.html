@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Agentic RAG</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">🤖</span>
+                <span class="brand-name">Agentic RAG</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/chat" class="nav-link">Chat</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/contact" class="nav-link active">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact Us</h1>
+                <p class="subtitle">We'd love to hear from you</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>info@agenticrag.com</p>
+                        <p>support@agenticrag.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>Main: +1 (555) 123-4567</p>
+                        <p>Support: +1 (555) 123-4568</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Address</h3>
+                        <p>123 AI Street</p>
+                        <p>Tech Valley, CA 94000</p>
+                        <p>United States</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday</p>
+                        <p>9:00 AM - 6:00 PM PST</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form-input" 
+                                placeholder="Your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="your.email@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-input" 
+                                placeholder="+1 (555) 123-4567"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form-input" 
+                                rows="6" 
+                                placeholder="Tell us how we can help you..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+
+                        <p class="form-note">
+                            * Required fields. We'll respond within 24-48 hours.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How do I get started?</h3>
+                        <p>Simply visit our <a href="/chat">Chat page</a> and start asking questions. No registration required!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What can I ask about?</h3>
+                        <p>You can ask about anything! Our AI will search the web, Wikipedia, academic papers, and more to find the best answer.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is it free to use?</h3>
+                        <p>Currently, the service is available for demonstration purposes. Contact us for enterprise pricing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How accurate are the answers?</h3>
+                        <p>We use state-of-the-art AI and multiple authoritative sources to provide accurate, comprehensive answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Agentic RAG</h4>
+                    <p>AI-powered search and retrieval system</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/chat">Chat</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@agenticrag.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Agentic RAG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/contact.js"></script>
+</body>
+</html>

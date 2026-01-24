@@ -1,0 +1,14 @@
+langchain
+langchain-core
+langchain-community
+langchain-experimental
+langchain-openai
+langgraph
+python-dotenv
+faiss-cpu
+wikipedia
+arxiv
+ipykernel
+pydantic
+numexpr
+langchainhub

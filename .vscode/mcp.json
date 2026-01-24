@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"count-r": {
+			"url": "http://localhost:8000/sse",
+			"type": "http"
+		},
+		"server-file-system": {
+			"url": "http://localhost:8004/sse",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

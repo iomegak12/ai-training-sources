@@ -1,0 +1,14 @@
+# requirements.txt
+mcp
+fastapi
+uvicorn
+
+mcp[cli]
+httpx
+langchain
+langchain-openai
+langgraph
+langchain-mcp-adapters
+
+fastmcp
+uvicorn

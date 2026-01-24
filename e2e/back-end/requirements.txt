@@ -1,0 +1,14 @@
+langchain
+langchain-core
+langchain-community
+langchain-openai
+
+langgraph
+wikipedia
+arxiv
+faiss-cpu
+ipykernel
+
+fastapi
+uvicorn[standard]
+pydantic

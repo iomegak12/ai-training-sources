@@ -1,0 +1,45 @@
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-experimental
+
+python-dotenv
+ipykernel
+pydantic
+numexpr
+
+streamlit
+tabulate
+
+faiss-cpu
+
+unstructured
+langchain-unstructured
+
+langchain-pinecone
+pinecone-client
+
+# unstructured
+# langchain-pinecone
+# pinecone-client
+# streamlit
+
+langchain-ollama
+# langdetect
+# deep-translator
+
+# gradio
+
+# tabulate
+
+wikipedia
+arxiv
+langgraph
+# langchain-anthropic
+
+#chroma
+# langchain-chroma
+# nbformat
+
+chromadb
