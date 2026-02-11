@@ -3,7 +3,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain.chains.summarize import load_summarize_chain
+from langchain_classic.chains.summarize import load_summarize_chain
 
 
 def create_embeddings():
@@ -65,15 +65,18 @@ def main():
         load_dotenv()
 
         index_name = os.getenv("PINECONE_INDEX_NAME")
+
         if not index_name:
             raise ValueError(
                 "PINECONE_INDEX_NAME environment variable is not set.")
+
         embeddings = create_embeddings()
+
         if not embeddings:
             raise ValueError("Failed to create embeddings.")
 
-        st.set_page_config(page_title="RAG CSAE Study", layout="wide")
-        st.sidebar.title("RAG CSAE Study - Search")
+        st.set_page_config(page_title="RAG CASE Study", layout="wide")
+        st.sidebar.title("RAG CASE Study - Search")
 
         st.title("RAG CASE Study - UI")
         st.write(

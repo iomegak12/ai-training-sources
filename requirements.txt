@@ -43,3 +43,4 @@ langgraph
 # nbformat
 
 chromadb
+ddgs

@@ -30,8 +30,8 @@ def main():
         df = pd.read_csv(csv_path)
 
         model_name = "gpt-4o"
-        temperature = 0.8
-        max_tokens = 1000
+        temperature = 0.1
+        max_tokens = 2000
 
         llm = ChatOpenAI(
             model=model_name,

@@ -1,6 +1,6 @@
 from langchain_openai import OpenAIEmbeddings
 from pypdf import PdfReader
-from langchain.schema import Document
+from langchain_classic.schema import Document
 from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
 
@@ -13,6 +13,8 @@ def get_pdf_text(pdf_document):
     pdf_reader = PdfReader(pdf_document)
     for page in pdf_reader.pages:
         text += page.extract_text()
+
+    print(f"(First 100 Characters) Text Extraction Completed for {text[:100]}...")
 
     return text
 
@@ -60,6 +62,10 @@ def main():
         load_dotenv()
 
         index_name = os.environ["PINECONE_INDEX_NAME"]
+        
+        if not index_name:
+            raise ValueError("PINECONE_INDEX_NAME is not set in the environment variables.")
+        
         directory_name = "../lc-training-data/rag-docs"
         files = os.listdir(directory_name)
         pdf_files = []
