@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  # Agentic RAG API Service
+  agentic-rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agentic-rag-api
+    ports:
+      - "9080:9080"
+    environment:
+      # API Configuration
+      - API_HOST=0.0.0.0
+      - API_PORT=9080
+      - API_ENV=production
+      - API_RELOAD=false
+      - API_WORKERS=4
+      
+      # OpenAI API Key (REQUIRED - set via .env file or environment)
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      
+      # Rate Limiting (enabled in production)
+      - RATE_LIMIT_ENABLED=true
+      - RATE_LIMIT_PER_MINUTE=60
+      - RATE_LIMIT_PER_HOUR=1000
+      
+      # CORS
+      - CORS_ENABLED=true
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:8080
+      
+      # Logging
+      - LOG_LEVEL=INFO
+      - LOG_FORMAT=json
+      - LOG_FILE_ENABLED=true
+      
+      # Documentation (disable in production for security)
+      - DOCS_ENABLED=false
+      
+      # Agent Configuration
+      - AGENT_MODEL_NAME=gpt-4o
+      - AGENT_TEMPERATURE=0.0
+      - AGENT_MAX_TOKENS=4096
+      
+      # SQL Agent
+      - SQL_MODEL_NAME=gpt-4o-mini
+      - SQL_TEMPERATURE=0.0
+      
+      # FAISS Configuration
+      - FAISS_ENABLED=true
+      - FAISS_TOOL_NAME=langsmith_search
+      - FAISS_CHUNK_SIZE=1000
+      - FAISS_CHUNK_OVERLAP=200
+    
+    volumes:
+      # Persist databases
+      - ./db:/app/db
+      # Persist logs
+      - ./logs:/app/logs
+      # Persist FAISS cache
+      - ./faiss_cache:/app/faiss_cache
+    
+    env_file:
+      - .env
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    networks:
+      - agentic-rag-network
+    
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '1.0'
+          memory: 2G
+
+networks:
+  agentic-rag-network:
+    driver: bridge
+
+volumes:
+  db-data:
+  logs-data:
+  faiss-data:

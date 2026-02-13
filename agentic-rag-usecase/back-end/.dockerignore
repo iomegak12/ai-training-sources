@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# Logs (keep directory structure)
+logs/*.log
+*.log
+
+# Environment files (never include in image)
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+README.md
+LICENSE
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Databases (will be mounted as volumes)
+db/crm.db
+db/chinook.db
+*.db
+
+# FAISS cache (will be mounted as volume)
+faiss_cache/
+
+# Notebooks and experiments
+*.ipynb
+notebooks/
+experiments/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/

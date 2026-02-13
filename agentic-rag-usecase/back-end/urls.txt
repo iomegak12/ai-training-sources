@@ -1,0 +1,15 @@
+# ============================================
+# FAISS Vector Store - URLs to Index
+# One URL per line
+# Lines starting with # are ignored (comments)
+# Empty lines are ignored
+# ============================================
+
+# LangChain Documentation
+https://docs.smith.langchain.com
+https://python.langchain.com/docs/get_started
+https://python.langchain.com/docs/modules
+
+# Add your custom knowledge base URLs below
+# https://your-company-docs.com/api
+# https://your-company-docs.com/guides
