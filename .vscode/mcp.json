@@ -4,7 +4,11 @@
 			"url": "http://localhost:8000/sse",
 			"type": "http"
 		},
-		"server-file-system": {
+		"microsoft-documentation": {
+			"url": "https://learn.microsoft.com/api/mcp",
+			"type": "http"
+		},
+		"server-filesystem": {
 			"url": "http://localhost:8004/sse",
 			"type": "http"
 		}

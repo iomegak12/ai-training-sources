@@ -31,8 +31,6 @@ def count_r(word: str) -> int:
 
 if __name__ == "__main__":
     try:
-        print("Starting MCP server 'count-r' on 127.0.0.1:5000")
-
         mcp.run(transport="stdio")
     except Exception as e:
         print(f"Error: {e}")

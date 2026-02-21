@@ -19,7 +19,7 @@ langchain-unstructured
 
 langchain-pinecone
 pinecone-client
-
+ipykernel
 # unstructured
 # langchain-pinecone
 # pinecone-client
