@@ -3,7 +3,7 @@ langchain-core
 langchain-community
 langchain-openai
 langchain-experimental
-
+langchain-anthropic
 python-dotenv
 ipykernel
 pydantic
