@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Sequence
-from langchain.schema import BaseMessage, SystemMessage, AIMessage, HumanMessage
+from langchain_classic.schema import BaseMessage, SystemMessage, AIMessage, HumanMessage
 from langchain_core.tools import tool
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, START, END
@@ -74,7 +74,7 @@ if not openai_api_key:
     raise ValueError("OPENAI_API_KEY environment variable is not set.")
 
 model = ChatOpenAI(
-    model="gpt-4o-mini",
+    model="gpt-5.2",
     openai_api_key=openai_api_key,
     temperature=0.0)
 
@@ -82,9 +82,9 @@ model = model.bind_tools([add, subtract, multiply])
 
 
 graph = StateGraph(AgentState)
-graph.add_node("think", model_call)
-
 tool_exec = ToolNode([add, subtract, multiply])
+
+graph.add_node("think", model_call)
 graph.add_node("tools", tool_exec)
 
 graph.add_edge(START, "think")

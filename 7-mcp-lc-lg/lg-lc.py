@@ -12,17 +12,13 @@ model = ChatOpenAI(model="gpt-4o")
 
 # server parameters
 server_params = {
-    "count-r": {
-        "transport": "sse",
-        "url": "http://localhost:8000/sse"
-    },
     "task-manager": {
         "transport": "sse",
-        "url": "http://localhost:8003/sse"
+        "url": "http://localhost:8100/sse"
     },
     "remote-file-system": {
         "transport": "sse",
-        "url": "http://localhost:8004/sse"
+        "url": "http://localhost:8200/sse"
     }
 }
 
@@ -38,9 +34,8 @@ async def main(query: str):
     return response
 
 query = """
-    i would like to count the number of r characters from the file test.txt which is located in remote file system.
-    Dump the output into a file named output-v2.txt in the remote file system.
-    And represent above information in the form of a task and create it.
+    can you generate a simple task with task manager stating that we're learning MCP, LangChain and LangGraph with Claude, 
+    and should be completed automatically. retrieve all tasks and write them into the file named c:\\data\\programmatic-tasks.txt in the file system.
 """
 
 if __name__ == "__main__":
